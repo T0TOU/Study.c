@@ -1,13 +1,22 @@
-//#include <stdio.h>
-//int main()
-//{
-//int num1 = 0;
-//int num2 = 0;
-//scanf_s("%d%d", &num1, &num2);
-//int sum= 0;
-//sum = num1 + num2;
-//printf("sum=%d",sum );
-//
-//	return 0;
-//
-//}
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include"judge.h"
+int main()
+{
+	int x;
+	int a[500];
+	int len;
+	for (x = 1; x <= 10000; x++)
+	{
+		if (judge(x,a,&len) == 1)
+		{
+			printf("%d是完全数\n%d的真因数是:", x,x);
+			for (int i = 0; i < len; i++)
+			{
+				printf("%d ", a[i]);
+			}
+			printf("\n\n");
+		}
+	}
+	return 0;
+}
